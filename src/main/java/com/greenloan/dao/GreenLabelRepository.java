@@ -1,8 +1,8 @@
-package com.mkyong.dao;
+package com.greenloan.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.mkyong.model.GreenLabel;
+import com.greenloan.model.GreenLabel;
 
 public interface GreenLabelRepository extends CrudRepository<GreenLabel,Long> {
 

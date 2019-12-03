@@ -1,8 +1,9 @@
-package com.mkyong.controller;
+package com.greenloan.controller;
 
-import com.mkyong.model.GreenLabel;
-import com.mkyong.service.HibernateSearchService;
-import com.mkyong.service.LabelService;
+import com.greenloan.model.GreenLabel;
+import com.greenloan.service.HibernateSearchService;
+import com.greenloan.service.LabelService;
+import com.greenloan.service.LoanService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-public class CardController {
+public class LabelController {
 
     @Autowired
     private HibernateSearchService searchservice;
@@ -22,7 +23,7 @@ public class CardController {
     @Autowired
     private LabelService labelservice;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String search(@RequestParam(value = "search", required = false) String q, Model model) {
         List<GreenLabel> searchResults = null;
         try {

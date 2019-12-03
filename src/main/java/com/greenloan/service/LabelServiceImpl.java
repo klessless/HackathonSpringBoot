@@ -1,10 +1,10 @@
-package com.mkyong.service;
+package com.greenloan.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mkyong.dao.GreenLabelRepository;
-import com.mkyong.model.GreenLabel;
+import com.greenloan.dao.GreenLabelRepository;
+import com.greenloan.model.GreenLabel;
 
 @Service
 public class LabelServiceImpl implements LabelService {

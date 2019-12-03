@@ -1,4 +1,4 @@
-package com.mkyong.model;
+package com.greenloan.model;
 
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;

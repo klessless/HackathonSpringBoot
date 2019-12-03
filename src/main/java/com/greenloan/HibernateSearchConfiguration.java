@@ -1,10 +1,11 @@
-package com.mkyong;
+package com.greenloan;
 
-import com.mkyong.service.HibernateSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.greenloan.service.HibernateSearchService;
 
 import javax.persistence.EntityManager;
 

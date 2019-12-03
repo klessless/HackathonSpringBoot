@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <title>Loan List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+<!--     <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
+	<style>
+	table, th, td {
+	border: 2px solid #78ab46;
+	padding: 1px;
+	background-color : white;
+}
+
+label{
+	color : white;
+}
+
+table{
+	background-color : white;}
+
+th{
+	color: #10590b;
+}
+
+h1,h2 {
+	color: #90EE90;
+}
+
+.logo{
+	width : 200px;
+	height : 200px;
+	left : 0px;
+	top : 0px;
+	background: url(images/logo.png) no-repeat 0 0;
+}
+
+body{
+	background:url(images/background.png) no-repeat center center fixed;
+}
+	</style>
+</head>
+<body>
+<div class="logo"></div>
+<div class="container">
+	<div th:if="${not #lists.isEmpty(loans)}">
+		<h2>Loan List</h2>
+		<table class="table table-striped">
+			<tr>
+				<th>Borrower</th>
+				<th>Loan Purpose Type</th>
+				<th>Account Number</th>
+			</tr>
+			<tr th:each="loan : ${loans}">
+				<td ahref="www.google.com" th:text="${loan.borrower}"></td>
+				<td th:text="${loan.loanPurposeType}"></td>
+				<td th:text="${loan.accountNumber}"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>

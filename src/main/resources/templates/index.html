@@ -1,45 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
 <head>
-    <!-- META SECTION -->
-    <title>Green Loan</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- END META SECTION -->
-    <!--  BEGIN STYLE -->
+    <title>GreenLoan</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+<!--     <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
     <style>
-        table, th, td {
-            border: 2px solid green;
-            padding: 1px;
-        }
-    </style>
-    <!--  END STYLE -->
+	table, th, td {
+	border: 2px solid #78ab46;
+	padding: 1px;
+	background-color : white;
+}
 
-</head>
+label{
+	color : white;
+}
+
+table{
+	background-color : white;}
+
+th{
+	color: #10590b;
+}
+
+h1,h2 {
+	color: #90EE90;
+}
+
+.logo{
+	width : 200px;
+	height : 200px;
+	left : 0px;
+	top : 0px;
+	background: url(images/logo.png) no-repeat 0 0;
+}
+
+body{
+	background:url(images/background.png) no-repeat center center fixed;
+}
+	</style>
+ </head>
 <body>
-<form action="#" th:action="@{/}" th:object="${search}">
-    <label for="search_input">Search:</label> 
-    <input name="search" id="search"/>
-    <div th:if="${not #lists.isEmpty(search)}">
-        <h2>Search Results</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="search : ${search}">
-                <td th:text="${search.id}">Text ...</td>
-                <td th:text="${search.name}">Text ...</td>
-                <td th:text="${search.description}">Text ...</td>
-            </tr>
-            </tbody>
-        </table>
+<div class="logo"></div>
+<div layout:fragment="content" th:remove="tag" >
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>GreenLoan Search</h1>
+            <form action="#" th:action="@{/search}" th:object="${search}">
+    			<label for="search_input">Search:</label> 
+    			<input name="search" id="search" placeholder="Search labels ..."/>
+    			<div th:if="${not #lists.isEmpty(search)}">
+        			<h2>Search Results</h2>
+        			<table>
+            			<thead>
+            				<tr>
+				                <th>ID</th>
+				                <th>Name</th>
+				                <th>Description</th>
+            				</tr>
+            			</thead>
+            			<tbody>
+				            <tr th:each="search : ${search}">
+				                <td th:text="${search.id}">Text ...</td>
+				                <td th:text="${search.name}">Text ...</td>
+				                <td th:text="${search.description}">Text ...</td>
+				            </tr>
+			            </tbody>
+        			</table>
+    			</div>
+			</form>
+        </div>
     </div>
-</form>
+</div>
 </body>
 </html>

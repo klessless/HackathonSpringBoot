@@ -1,4 +1,4 @@
-package com.mkyong.service;
+package com.greenloan.service;
 
 public interface LabelService {
 
